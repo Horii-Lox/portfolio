@@ -1,5 +1,6 @@
 body {
   max-width: 1440px;
+  margin: auto; /*追加*/
 }
 
 .header {
@@ -21,7 +22,8 @@ body {
   margin-left: 36px;
 }
 .main {
-  margin: 0 100px; /*確認*/
+  width: 1152px; /*コンテンツ幅を決めて、marginをautoにする*/
+  margin: auto;
 }
 .main_content {
   display: flex;
@@ -30,6 +32,11 @@ body {
   margin: 150px 0 50px 0;
   object-fit: contain;
 }
+.title img {
+  max-width: 491px;
+  width: 100%;
+  height: auto;
+}
 #title_text {
   font-size: 27px;
 }
@@ -37,22 +44,24 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: center; /*追加*/
 }
 .main_img {
-  width: 575px;
-  height: 498px;
+  max-width: 575px;
+  width: 100%;
+  height: auto;
+  /* height: 498px; */
 }
 .main_img_content {
   margin-bottom: 30px;
+  width: calc(50% - 30px); /*追加*/
 }
 .main_img_item {
-  width: 546px;
+  width: 100%;
   height: 307px;
   object-fit: cover;
 }
-.main_img_content {
-  display: grid;
-}
+
 .main_but {
   text-align: right;
   display: block;
