@@ -10,7 +10,7 @@ body {
 }
 .header_title {
   width: 196px;
-  background-color: gray;
+  background-color: #707070;
 }
 .small_logo {
   padding: 28px 56px;
@@ -22,7 +22,7 @@ body {
   margin-left: 36px;
 }
 .main {
-  width: 1152px; /*コンテンツ幅を決めて、marginをautoにする*/
+  max-width: 1152px; /*コンテンツ幅を決めて、marginをautoにする*/
   margin: auto;
 }
 .main_content {
@@ -68,14 +68,14 @@ body {
   margin-bottom: 100px;
 }
 footer {
-  background-color: aliceblue;
+  background-color: #eeeeee;
 }
 .footer {
   display: flex;
   margin: 0px 100px;
   padding: 100px 0;
   justify-content: space-between;
-  background-color: aliceblue;
+  background-color: #eeeeee;
 }
 
 @media screen and (max-width: 767px) {
