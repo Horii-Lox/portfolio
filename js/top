@@ -1,0 +1,43 @@
+// ---------- TODO 1 の回答 ----------
+// document.querySelector('.クラス名') で、HTMLの要素を取得できます
+// ここでは class="hamburger" のボタン要素を取得しています
+const hamburger = document.querySelector(".hamburger");
+
+// ---------- TODO 2 の回答 ----------
+// class="nav-overlay" のナビゲーション要素を取得しています
+const navOverlay = document.querySelector(".nav-overlay");
+
+// ---------- TODO 3 の回答 ----------
+// addEventListener('click', 関数) → クリックされた時に関数を実行します
+//
+// classList.toggle('active') の動作：
+//   - 'active' クラスが付いていない場合 → 追加されます
+//   - 'active' クラスが付いている場合 → 削除されます
+//   クリックするたびに ON / OFF が切り替わります
+//
+// ★ ポイント：
+//   JSの役割は「activeクラスの付け外し」のみです
+//   アニメーションの見た目はCSSが担当しています
+hamburger.addEventListener("click", function () {
+  // ボタンに active を付け外しします → CSSで ≡ と × が切り替わります
+  hamburger.classList.toggle("active");
+
+  // ナビに active を付け外しします → CSSでフェードイン / フェードアウトします
+  navOverlay.classList.toggle("active");
+});
+
+// ===================================
+// 【動作の流れまとめ】
+// ===================================
+//
+// ■ 1回目のクリック（メニューを開く場合）：
+//   1. hamburger に 'active' が追加されます → 3本線が × に変わります
+//   2. navOverlay に 'active' が追加されます → メニューがフェードインで表示されます
+//
+// ■ 2回目のクリック（メニューを閉じる場合）：
+//   1. hamburger から 'active' が削除されます → × が 3本線に戻ります
+//   2. navOverlay から 'active' が削除されます → メニューがフェードアウトで非表示になります
+//
+// ★ JSの役割はクラスの「付け外し」のみです
+// ★ アニメーションの見た目はすべてCSSの transition で制御されています
+// ★ JS と CSS の役割分担を意識することが大切です
