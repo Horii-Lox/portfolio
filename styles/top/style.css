@@ -78,5 +78,171 @@ footer {
   background-color: #eeeeee;
 }
 
+ ===================================
+   ハンバーガーボタン
+   ===================================
+   position: relative → 中の<span>をabsoluteで配置するための基準
+   z-index: 200 → ナビが開いてもボタンが手前に来るようにする
+*/
+.hamburger {
+  width: 40px;
+  height: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 200;
+}
+
+/* 3本線の共通スタイル
+   transition: all 0.3s ease → プロパティが変わった時に0.3秒かけてアニメーション */
+.hamburger__line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+/* 1本目の線 → 上 */
+.hamburger__line:nth-child(1) {
+  top: 0;
+}
+
+/* 2本目の線 → 真ん中 */
+.hamburger__line:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* 3本目の線 → 下 */
+.hamburger__line:nth-child(3) {
+  bottom: 0;
+}
+
+/* ===================================
+   ボタンが押された時の × アニメーション
+   ===================================
+   .active クラスが付くと：
+     1本目 → 中央に移動して45度回転します
+     2本目 → 透明になり消えます
+     3本目 → 中央に移動して-45度回転します
+   → 1本目と3本目が交差して × の形になります
+*/
+.hamburger.active .hamburger__line:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.hamburger.active .hamburger__line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger__line:nth-child(3) {
+  bottom: auto;
+  top: 50%;
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+/* ===================================
+   ナビゲーション
+   ===================================
+   ★ ここが今回の課題の核心部分です
+
+   【なぜ display: none ではなく opacity + visibility を使うのか】
+   → display: none ではアニメーションができません（瞬時に切り替わるだけです）
+   → opacity + visibility であれば transition でスムーズなアニメーションが可能です
+*/
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(26, 26, 46, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 150;
+  transition:
+    opacity 0.4s ease,
+    visibility 0.4s ease;
+
+  /* ★ TODO 1 の回答 ★
+     opacity: 0 → 透明になります（見えなくなります）
+     visibility: hidden → クリックもできなくなります */
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* ★ TODO 2 の回答 ★
+   .active が付いた時 → 見える状態にします */
+.nav-overlay.active {
+  opacity: 1; /* 不透明になります（見える状態） */
+  visibility: visible; /* クリックも可能になります */
+}
+
+/* ナビのリンクスタイル */
+.nav-overlay__list {
+  list-style: none;
+  text-align: center;
+}
+
+.nav-overlay__list li {
+  margin: 25px 0;
+}
+
+.nav-overlay__list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-overlay__list a:hover {
+  color: #e94560;
+}
+
+/* ===================================
+   メインコンテンツ
+   ===================================
+   padding-top: 70px → ヘッダーが fixed で浮いているので、
+   その分の余白を入れないとコンテンツがヘッダーの裏に隠れる
+*/
+.main-content {
+  padding-top: 70px;
+}
+
+.hero {
+  height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f3443, #34e89e);
+  color: #fff;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.8;
+  line-height: 1.8;
+}
+
 @media screen and (max-width: 767px) {
 }
