@@ -11,6 +11,7 @@ body {
 .header_title {
   width: 196px;
   background-color: #707070;
+  object-fit: cover;
 }
 .small_logo {
   padding: 28px 56px;
@@ -247,8 +248,16 @@ footer {
 @media screen and (max-width: 767px) {
   .main_content {
     display: block;
+    text-align: center;
+  }
+  .header_nav {
+    opacity: 0;
+    visibility: hidden;
+    margin: 0;
+    width: 0;
   }
   .footer {
     display: block;
+    text-align: center;
   }
 }
