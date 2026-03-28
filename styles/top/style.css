@@ -264,4 +264,6 @@ footer {
     display: block;
     text-align: center;
   }
+  .footer_logo {
+    margin-bottom: 32px;
 }
