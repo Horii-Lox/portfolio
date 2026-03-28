@@ -78,7 +78,7 @@ footer {
   background-color: #eeeeee;
 }
 
-===================================
+/*===================================
    ハンバーガーボタン
    ===================================
    position: relative → 中の<span>をabsoluteで配置するための基準
@@ -246,6 +246,9 @@ footer {
 
 @media screen and (max-width: 767px) {
   .main_content {
+    display: block;
+  }
+  .footer {
     display: block;
   }
 }
