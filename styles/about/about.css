@@ -46,8 +46,9 @@ body {
   height: auto;
   /* height: 498px; */
 }
-
-
+.main_texts {
+  display: flex;
+  }
 
 
 footer {
