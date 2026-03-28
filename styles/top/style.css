@@ -78,6 +78,10 @@ footer {
   justify-content: space-between;
   background-color: #eeeeee;
 }
+.footer_nav {
+  width: 72px;
+  gap: 36px;
+  }
 
 /*===================================
    ハンバーガーボタン
