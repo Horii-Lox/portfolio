@@ -25,9 +25,9 @@ body {
   max-width: 1152px; /*コンテンツ幅を決めて、marginをautoにする*/
   margin: auto;
 }
-.main_content {
+/* .main_content {
   display: flex;
-}
+} */
 .title {
   margin: 150px 0 50px 0;
   object-fit: contain;
@@ -41,15 +41,17 @@ body {
   font-size: 27px;
 }
 .main_img {
-  max-width: 575px;
+  max-width: 1152px;
   width: 100%;
   height: auto;
-  /* height: 498px; */
 }
 .main_texts {
   display: flex;
-  }
+}
 
+/* .main_texts {
+  display: flex;
+  } */
 
 footer {
   background-color: #eeeeee;

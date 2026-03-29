@@ -79,9 +79,10 @@ footer {
   background-color: #eeeeee;
 }
 .footer_nav {
-  width: 72px;
-  gap: 36px;
-  }
+  display: flex;
+  justify-content: space-between;
+  width: 90px;
+}
 
 /*===================================
    ハンバーガーボタン
@@ -266,4 +267,8 @@ footer {
   }
   .footer_logo {
     margin-bottom: 32px;
+  }
+  .footer_nav {
+    margin: auto;
+  }
 }
