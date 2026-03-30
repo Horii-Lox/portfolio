@@ -271,7 +271,10 @@ footer {
   opacity: 0.8;
   line-height: 1.8;
 }
-
+.another_post {
+  display: flex;
+  justify-content: space-between;
+  }
 @media screen and (max-width: 767px) {
   .main_content {
     display: block;
