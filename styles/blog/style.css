@@ -41,6 +41,9 @@ body {
 #title_text {
   font-size: 27px;
 }
+.title_logo {
+  margin-bottom: 112px;
+}
 .main_images {
   display: flex;
   justify-content: space-between;
