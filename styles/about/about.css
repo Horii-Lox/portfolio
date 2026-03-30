@@ -93,7 +93,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 169px;
-  /* margin-left: auto; */
+  margin-left: auto;
 }
 footer {
   background-color: #eeeeee;
@@ -299,6 +299,11 @@ footer {
     margin-bottom: 32px;
   }
   .footer_nav {
-    /* margin: auto; */
+    margin: auto;
+  }
+  #about_main_nav {
+    margin-top: 30px;
+    margin-bottom: 18px;
+    margin-left: 0;
   }
 }
